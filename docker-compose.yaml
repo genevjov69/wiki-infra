@@ -38,7 +38,6 @@ services:
       - "DISABLE_SECURITY_DASHBOARDS_PLUGIN=true"
     networks:
       - opensearch-net
-
   broker:
     image: confluentinc/cp-kafka:7.4.1
     hostname: broker
@@ -143,3 +142,8 @@ services:
       KAFKA_REST_BOOTSTRAP_SERVERS: 'broker:29092'
       KAFKA_REST_LISTENERS: "http://0.0.0.0:8082"
       KAFKA_REST_SCHEMA_REGISTRY_URL: 'http://schema-registry:8081'
+networks:
+  opensearch-net:
+
+volumes:
+  opensearch-node:
